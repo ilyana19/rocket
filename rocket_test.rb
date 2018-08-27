@@ -10,16 +10,27 @@ class RocketTest < Minitest::Test
     @aries = Rocket.new(name: 'Aries III', colour: 'blue')
   end
 
-  def test_rocket_initialize_with_no_given_arguments
-    @rocket = Rocket.new
+  def test_rocket_initialize_with_default_name
     assert_instance_of(String, @rocket.name)
+  end
+
+  def test_rocket_initialize_with_default_colour
     assert_instance_of(String, @rocket.colour)
+  end
+
+  def test_rocket_initialize_with_default_flying
     assert_equal(false, @rocket.flying?)
   end
 
-  def test_rocket_initialize_with_given_arguments
+  def test_rocket_initialize_with_given_name
     assert_equal('M.O.X', @mox.name)
+  end
+
+  def test_rocket_initialize_with_given_colour
     assert_equal('orange', @mox.colour)
+  end
+
+  def test_rocket_initialize_with_given_flying
     assert_equal(true, @mox.flying?)
   end
 
